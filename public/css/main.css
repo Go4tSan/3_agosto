@@ -1,0 +1,283 @@
+:root { /*No se reserva solamente a colores*/
+    --blanco: #ffffff;
+    --oscuro: #212121;
+    --primario: #ffc107;
+    --secundario: #0097a7;
+    --gris: #757575;
+    --grisClaro: #DFE9F3;
+}
+/*El siguiente código en el html y en el body ayuda con los tamaños de las letras para todas las páginas*/
+/*Globales*/
+html {
+    font-size: 62.5%;
+    box-sizing: border-box; /*Mantiene el tamaño de los bloques sin importar el padding*/
+    scroll-snap-type: y mandatory; /*Para agregar scroll*/
+}
+
+/*Scroll Snap
+.servicios, 
+.navegacion-principal,
+.formulario {
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}*/
+
+*, *:before, *:after { /*Mantenga el tamaño en todos los elementos*/
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 16px; /*1rem = 10px*/
+    font-family: 'Krub', sans-serif;
+    background-image: linear-gradient(to top, var(--grisClaro) 0%, var(--blanco) 100%); /*Para aplicar el degradado del fondo en toda la página*/
+}
+
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto; /*Distancia entre elementos*/
+}
+
+.boton {
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    margin-top: 3rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: .5rem;
+    width: 90%;
+    text-align: center;
+    border: none;
+}
+
+@media (min-width: 768px) {
+    .boton {
+        width: auto;
+    }
+}
+
+.boton:hover { /*Aparecer la manito al pasar por el boton*/
+    cursor: pointer;
+}
+
+.sombra {
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.48);
+    -moz-box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.48);
+    box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.48);
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+/*Creamos reglas de tipografía generales "Design System"*/
+/*Tipografía*/
+h1 {
+    font-size: 3.8rem;
+}
+
+h2 {
+    font-size: 2.8rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+h1,h2,h3 {
+    text-align: center;
+}
+
+/*-------------------------------------*/
+/*Titulos*/
+.titulo span {
+    font-size: 2rem;
+}
+
+/*Utilidades*/
+.w-sm-100 {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .w-sm-100 {
+        width: auto;
+    }
+}
+.flex {
+    display: flex;
+}
+
+.alinear-derecha {
+    justify-content: flex-end;
+}
+
+/*Navegación Principal*/
+.navbar {
+    background-color: var(--secundario);
+}
+
+.navegacion-principal {
+    display: flex; /*Habilita herramientas para organizar de manera horizontal*/
+    flex-direction: column;
+}
+
+@media (min-width: 768px) { /*Aqui abrimos el resposive para tablet*/
+    .navegacion-principal {
+        flex-direction: row;
+        justify-content: space-between; /*Permite justificar el contenido y distribuirlo*/
+    }
+}
+
+.navegacion-principal a {
+    display: block;
+    text-align: center;
+    color: var(--blanco);
+    text-decoration: none; /*Quitar liena de hipervinculo*/
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 1rem; /*Distancia desde el limite del elemento hacia el interior*/
+}
+
+.navegacion-principal a:hover { /*Agrega efecto de amarillo al seleccionar*/
+    background-color: var(--primario);
+    color: var(--oscuro);
+}
+
+/*Hero*/
+.hero {
+    background-image: url(../img/hero.jpg);
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 410px;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.contenido-hero {
+    position: absolute;
+    background-color: rgba(0, 0, 0, .7); /*Anterior forma de transparencia*/
+    background-color: rgb(0 0 0 / 70%); /*Nueva forma de transparencia*/
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /*Alinear horizontalmente si flex direction está en column*/
+    justify-content: center; /*Alinea verticalmente si flex direction está en column*/
+}
+
+.contenido-hero h2,
+.contenido-hero p {
+    color: var(--blanco);
+}
+
+.contenido-hero .ubicacion {
+    display: flex;
+    align-items: flex-end;
+}
+
+
+/*Servicios*/
+@media (min-width: 768px) {
+    .servicios {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /*Divide en fracciones el espacio existente para organizar las columnas*/
+        column-gap: 1rem;
+    }
+}
+
+.servicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.servicio h3 { /*Titulos del servicio*/
+    color: var(--secundario);
+    font-weight: normal;
+}
+
+.servicio p {
+    line-height: 2; /*Interlineado parrafos*/
+    text-align: center;
+}
+
+.servicio .iconos {
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--primario);
+    border-radius: 50%;
+    display: flex; /*Habilita el space-evenly*/
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/*Contacto Formulario*/
+.formulario {
+    background-color: var(--gris);
+    width: min(60rem, 100%); /*utilizar el valor más pequeño*/
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.formulario fieldset {
+    border: none;
+}
+
+.formulario legend {
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--primario);
+}
+
+@media (min-width: 768px) {
+    .contenedor-campos {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto auto 20rem;
+        column-gap: 1rem;
+    }
+
+    .campo:nth-child(3),
+    .campo:nth-child(4) { /*Funciona como arreglo, el numero indica el elemento que yo quiera seleccionar que tenga el mismo nombre*/
+        grid-column: 1 / 3;
+    }
+}
+
+.campo {
+    margin-bottom: 1rem;
+}
+
+.campo label {
+    color: var(--blanco);
+    font-weight: bold;
+    margin-bottom: .5rem;
+    display: block;
+}
+
+.campo textarea {
+    height: 20rem;    
+}
+
+.input-text {
+    width: 100%;
+    border: none;
+    padding: 1.5rem;
+    border-radius: .5rem;
+}
+
+/*Footer*/
+.footer {
+    text-align: center;
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+}
+
+
