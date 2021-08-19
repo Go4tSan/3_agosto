@@ -13,20 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-/* Route::get('/', function () {
-    return view('layouts.plantilla');
-});
-*/
-// Route::get('/', function() { 
-//     return view('layouts.plantilla');
-// });
-
-// Route::get('login', function () {
-//     return view('layouts.login');
-// });
-
-Route::get('inicio', function () {
-    return view('inicio');
+ Route::get('inicio', function() { 
+     return view('layouts.plantilla');
 });
 Route::get('sobre mi', function () {
     return /* view('clientes');*/"hello world";
