@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
- Route::get('/', function() { 
+ Route::get('layouts.plantilla', function() { 
      return view('layouts.plantilla');
 });
 Route::get('sobre mi', function () {
