@@ -25,7 +25,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('layouts.login');
 // });
 
-Route::get('/', function () {
+Route::get('inicio', function () {
     return view('inicio');
 });
 Route::get('sobre mi', function () {
